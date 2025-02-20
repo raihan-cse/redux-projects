@@ -13,6 +13,7 @@ const initialState = {
   error: "",
 };
 
+//async thanks
 export const fetchTransactions = createAsyncThunk(
   "transaction/fetchTransactions",
   async () => {
