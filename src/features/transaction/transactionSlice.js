@@ -121,7 +121,8 @@ const transactionSlice = createSlice({
         state.isError = false;
         state.isLoading = false;
         state.transactions = state.transactions.filter(
-          (t) => t.id !== action.payload
+          // (t) => t.id !== action.payload (eivabe na paile nicher moto hobe)
+          (t) => t.id !== action.meta.arg
         );
       })
       .addCase(deleteTransaction.rejected, (state, action) => {
