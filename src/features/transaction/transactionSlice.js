@@ -66,8 +66,8 @@ const transactionSlice = createSlice({
         state.transactions = action.payload;
       })
       .addCase(fetchTransactions.rejected, (state, action) => {
-        state.isError = false;
         state.isLoading = false;
+        state.isError = true;
         state.error = action.error?.message;
         state.transactions = [];
       })
@@ -81,8 +81,8 @@ const transactionSlice = createSlice({
         state.transactions.push(action.payload);
       })
       .addCase(createTransaction.rejected, (state, action) => {
-        state.isError = false;
         state.isLoading = false;
+        state.isError = true;
         state.error = action.error?.message;
       })
       .addCase(updateTransaction.pending, (state) => {
@@ -100,8 +100,8 @@ const transactionSlice = createSlice({
         state.transactions[indexToUpdate] = action.payload;
       })
       .addCase(updateTransaction.rejected, (state, action) => {
-        state.isError = false;
         state.isLoading = false;
+        state.isError = true;
         state.error = action.error?.message;
       })
       .addCase(deleteTransaction.pending, (state) => {
@@ -116,8 +116,8 @@ const transactionSlice = createSlice({
         );
       })
       .addCase(deleteTransaction.rejected, (state, action) => {
-        state.isError = false;
         state.isLoading = false;
+        state.isError = true;
         state.error = action.error?.message;
       });
   },

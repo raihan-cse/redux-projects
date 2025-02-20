@@ -32,9 +32,9 @@
   margin: 20px auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  align-self: center;
+  /* align-self: center; */
 }
 
 .top_card {
@@ -180,6 +180,10 @@ label {
 .conatiner_of_list_of_transactions ul {
   max-height: 500px;
   overflow-y: auto;
+}
+
+.error {
+  color: red;
 }
 
 @media (max-width: 450px) {
